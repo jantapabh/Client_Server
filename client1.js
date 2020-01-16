@@ -7,8 +7,10 @@ var PORT = 6969;
 
 var client = new net.Socket();
 client.connect(PORT, HOST, function () {
+
     console.log('CONNECTED TO: ' + HOST + ':' + PORT);
-    client.write('I am Chuck Norris!');
+    client.write('Jan');
+
 });
 
 client.on('data', function (data) {
