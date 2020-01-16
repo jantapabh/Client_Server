@@ -35,16 +35,16 @@ client.on('data', function (data) {
             var answer = Math.floor(Math.random() * 21);
             word = parseInt(answer);
             client.write(word+'');
-            // console.log("Send Success");
+            console.log("Send Success");
 
         }
     }
        
 });
 
-// client.on('error', function (error) {
-//     console.log("ERROR Connect");
-// });
+client.on('error', function (error) {
+    console.log("ERROR Connect");
+});
 
 
 // Add a 'close' event handler for the client socket

@@ -13,40 +13,52 @@ net.createServer(function (sock) {
 
 
     console.log('Strat connect : ' + sock.remoteAddress + ':' + sock.remotePort);
-     
-    
+
+
 
     sock.on('data', function (data) {
 
         // console.log('DATA ' + sock.remoteAddress + ': ' + data);
-        sock.write("OK");
+        if (data.length != 10) {
 
-        sock.write("OK");
+
+            sock.write("Wrong username");
+
+
+        }
+        else {
+
+            sock.write("OK");
+
+        }
+
+
+
 
         if (j < 5) {
-    
+
             j = j + 1;
-    
-        
-    
+
+
+
             if (data == number) {
 
                 console.log("BINGO");
                 sock.write("BINGO");
-                console.log(' ', +data);
+                // console.log(' ', +data);
                 sock.destroy();
-              
-    
+
+
             }
             else {
-    
-                console.log("WRONG"); 
+
+                console.log("WRONG");
                 sock.write("WRONG");
-                console.log(' ', +data);
-    
+                // console.log(' ', +data);
+
             }
         }
-        
+
 
         //่ส่วนตอบกลับไยัง client
 
@@ -70,4 +82,4 @@ net.createServer(function (sock) {
 
 }).listen(PORT, HOST);
 
-// console.log('Server listening on ' + HOST + ':' + PORT);
+console.log('Server listening on ' + HOST + ':' + PORT);
