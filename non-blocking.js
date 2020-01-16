@@ -4,4 +4,6 @@ fs.readFile('text.txt', (err, data) => {
         return console.error(err);
     console.log(data.toString());
 });
-console.log("Finished");
+console.log("Finished"); 
+
+// non-blocking จะทำ callback หลัง
