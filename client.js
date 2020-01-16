@@ -16,10 +16,13 @@ client.connect(PORT, HOST , function() {
 client.on('data', function(data) {  //ส่วนการทำงานของ client 
 
     console.log('DATA : '+ data);
-    client.destroy();
+    client.destroy(); //ให้จบโปรแกรมและตัดการเชื่อมต่อ
 });
 
+Socket.on('error', () => {
 
+    console.log('Error : ', +error);
+})
 client.on('Close', function(){
 
     console.log('Connection close');
