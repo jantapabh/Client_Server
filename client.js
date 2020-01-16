@@ -19,10 +19,11 @@ client.on('data', function(data) {  //ส่วนการทำงานขอ
     client.destroy(); //ให้จบโปรแกรมและตัดการเชื่อมต่อ
 });
 
-Socket.on('error', () => {
+client.on('error', () => {
 
     console.log('Error : ', +error);
-})
+});
+
 client.on('Close', function(){
 
     console.log('Connection close');
