@@ -42,9 +42,9 @@ client.on('data', function (data) {
        
 });
 
-client.on('error', function (error) {
-    console.log('ERROR Connect : ' + client.remoteAddress + ' ' + client.remotePort);
-});
+// client.on('error', function (error) {
+//     console.log("ERROR Connect");
+// });
 
 
 // Add a 'close' event handler for the client socket
