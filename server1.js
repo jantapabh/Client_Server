@@ -17,12 +17,7 @@ net.createServer(function (sock) {
     sock.on('data', function (data) {
 
         // console.log('DATA ' + sock.remoteAddress + ': ' + data);
-        if (data.length != 10) {
-
-            sock.write("Wrong username");
-
-        }
-        else {
+      
 
             sock.write("OK");
 
@@ -51,8 +46,6 @@ net.createServer(function (sock) {
 
             }
         }
-    }
-
         //่ส่วนตอบกลับไยัง client
 
     });
