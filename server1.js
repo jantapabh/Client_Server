@@ -42,8 +42,6 @@ net.createServer(function (sock) {
 
             j = j + 1;
 
-
-
             if (word == number) {
 
                 console.log("BINGO");
@@ -56,7 +54,7 @@ net.createServer(function (sock) {
                 console.log("WRONG");
                 sock.write("WRONG");
                 // console.log(' ', +data);
-                
+
 
             }
         }
