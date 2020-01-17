@@ -15,9 +15,6 @@ net.createServer(function (sock) {
     console.log('Strat connect : ' + sock.remoteAddress + ':' + sock.remotePort);
 
 
-
-    
-
     sock.on('data', function (data) {
 
         // console.log('DATA ' + sock.remoteAddress + ': ' + data);
