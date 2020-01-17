@@ -3,7 +3,6 @@
 var net = require('net');
 var HOST = '127.0.0.1';
 var PORT = 6969;
-
 var j = 0;
 
 
@@ -37,6 +36,37 @@ net.createServer(function (sock) {
 
         word = data+'';
 
+        // if (j < 5) {
+
+        //     j = j + 1;
+
+        //     if (word == number) {
+
+        //         console.log("BINGO");
+        //         sock.write("BINGO");
+        //         // console.log(' ', +data);
+        //         sock.destroy();
+        //     }
+        //     else {
+
+        //         console.log("WRONG");
+        //         sock.write("WRONG");
+        //         // console.log(' ', +data);
+
+
+        //     }
+        // }
+
+
+        //่ส่วนตอบกลับไยัง client
+
+    });
+
+    sock.on('close', function (data) {
+
+
+        // console.log('CLOSED: ' + sock.remoteAddress + ' ' + sock.remotePort);
+
         if (j < 5) {
 
             j = j + 1;
@@ -58,15 +88,6 @@ net.createServer(function (sock) {
             }
         }
 
-
-        //่ส่วนตอบกลับไยัง client
-
-    });
-
-    sock.on('close', function (data) {
-
-
-        // console.log('CLOSED: ' + sock.remoteAddress + ' ' + sock.remotePort);
 
         console.log("END");
         // sock.destroy();
