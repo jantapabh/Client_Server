@@ -6,10 +6,14 @@ var PORT = 6969;
 //Server
 
 net.createServer(function(sock) {
+
+
    console.log('CONNECTED: ' + sock.remoteAddress +':'+ sock.remotePort);
    sock.on('data', function(data) {
        console.log('DATA ' + sock.remoteAddress + ': ' + data);
        sock.write('You said "' + data + '"');
+
+       // data คือส่วนที่ client write มานั่นเอง
    });
 
 

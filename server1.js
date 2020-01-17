@@ -17,55 +17,16 @@ net.createServer(function (sock) {
     sock.on('data', function (data) {
 
         // console.log('DATA ' + sock.remoteAddress + ': ' + data);
-        // if (data.length != 10) {
+        if (data.length != 10) {
 
 
-        //     sock.write("Wrong username");
+            sock.write("Wrong username");
 
 
-        // }
-        // else {
+        }
+        else {
 
-        //     sock.write("OK");
-
-        // }
-
-
-        // var number = ["5","7","9","18","21"];
-        // var word = "";
-
-        // word = data+'';
-
-        // if (j < 5) {
-
-        //     j = j + 1;
-
-        //     if (word == number) {
-
-        //         console.log("BINGO");
-        //         sock.write("BINGO");
-        //         // console.log(' ', +data);
-        //         sock.destroy();
-        //     }
-        //     else {
-
-        //         console.log("WRONG");
-        //         sock.write("WRONG");
-        //         // console.log(' ', +data);
-
-
-        //     }
-        // }
-
-
-        //่ส่วนตอบกลับไยัง client
-
-    });
-
-    sock.on('close', function (data) {
-
-
-        // console.log('CLOSED: ' + sock.remoteAddress + ' ' + sock.remotePort);
+            sock.write("OK");
 
         var number = ["5","7","9","18","21"];
         var word = "";
@@ -92,8 +53,16 @@ net.createServer(function (sock) {
 
             }
         }
+    }
+
+        //่ส่วนตอบกลับไยัง client
+
+    });
+
+    sock.on('close', function (data) {
 
 
+        // console.log('CLOSED: ' + sock.remoteAddress + ' ' + sock.remotePort);
         console.log("END");
         // sock.destroy();
 
