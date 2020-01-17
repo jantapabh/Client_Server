@@ -21,7 +21,9 @@ net.createServer(function (sock) {
 
             sock.write("OK");
 
-        var number = ["5","7","9","18","21"];
+        var number = ["1","5","7","15","20"];
+
+
         var word = "";
 
         word = data+'';
@@ -30,7 +32,7 @@ net.createServer(function (sock) {
 
             j = j + 1;
 
-            if (word == number) {
+            if (data == number.indexOf) {
 
                 console.log("BINGO");
                 sock.write("BINGO");
