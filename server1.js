@@ -19,9 +19,7 @@ net.createServer(function (sock) {
         // console.log('DATA ' + sock.remoteAddress + ': ' + data);
         if (data.length != 10) {
 
-
             sock.write("Wrong username");
-
 
         }
         else {
