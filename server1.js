@@ -31,10 +31,10 @@ net.createServer(function (sock) {
         // }
 
 
-        var number = ["5","7","9","18","21"];
-        var word = "";
+        // var number = ["5","7","9","18","21"];
+        // var word = "";
 
-        word = data+'';
+        // word = data+'';
 
         // if (j < 5) {
 
@@ -66,6 +66,11 @@ net.createServer(function (sock) {
 
 
         // console.log('CLOSED: ' + sock.remoteAddress + ' ' + sock.remotePort);
+
+        var number = ["5","7","9","18","21"];
+        var word = "";
+
+        word = data+'';
 
         if (j < 5) {
 
