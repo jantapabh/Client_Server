@@ -20,7 +20,8 @@ net.createServer(function (sock) {
     sock.on('data', function (data) {
 
 
-        word = data + '';
+        word = parseInt(data);
+
 
         // console.log('DATA ' + sock.remoteAddress + ': ' + data);
 
@@ -33,7 +34,7 @@ net.createServer(function (sock) {
 
                 j = j + 1;
 
-                if (data != number) {
+                if (data != word) {
 
                     // number = number + 1;
                     // // console.log("BINGO");
