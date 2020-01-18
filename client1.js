@@ -28,6 +28,7 @@ client.on('data', function (data) {
         {
             
             console.log("Number Correct");
+            console.log(' ',+data);
             client.destroy();
         }
         else{
@@ -35,6 +36,7 @@ client.on('data', function (data) {
             var answer = Math.floor(Math.random() * 21);
             word = parseInt(answer);
             client.write(word+'');
+            console.log(' ',+data);
             console.log("Send Success");
 
         }
