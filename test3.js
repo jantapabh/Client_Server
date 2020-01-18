@@ -17,6 +17,7 @@ client.connect(PORT, HOST, function() {
 
 
 
+
 client.on('data', function(data) {
    console.log('DATA: ' + data);
    client.destroy();
