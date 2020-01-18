@@ -20,7 +20,7 @@ net.createServer(function (sock) {
     sock.on('data', function (data) {
 
 
-        word = parseInt(data);
+        word = toString();
 
 
         // console.log('DATA ' + sock.remoteAddress + ': ' + data);
@@ -39,10 +39,10 @@ net.createServer(function (sock) {
                     // number = number + 1;
                     // // console.log("BINGO");
                     // sock.write("BINGO");
-                    // // console.log(' ', +data);
+                    // console.log(' ', +data);
                     // sock.destroy();
 
-                    // console.log("WRONG");
+                    console.log("WRONG");
                     sock.write("WRONG");
                     console.log(' ', +data);
 
@@ -54,7 +54,7 @@ net.createServer(function (sock) {
                     // console.log(' ', +data);
 
                     // number = number + 1;
-                    // console.log("BINGO");
+                    console.log("BINGO");
                     sock.write("BINGO");
                     console.log(' ', +data);
                     sock.destroy();
