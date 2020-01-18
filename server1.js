@@ -23,9 +23,8 @@ net.createServer(function (sock) {
 
         if (data.length == 10) {
 
+
             sock.write("OK");
-
-
 
             if (j < 5) {
 
@@ -48,6 +47,11 @@ net.createServer(function (sock) {
                 }
             }
         }
+        else{
+
+
+            sock.write("Wrong Usename");
+        }
         //่ส่วนตอบกลับไยัง client
 
     });
@@ -55,7 +59,6 @@ net.createServer(function (sock) {
     sock.on('close', function (data) {
 
 
-        // console.log('CLOSED: ' + sock.remoteAddress + ' ' + sock.remotePort);
         console.log("END");
         // sock.destroy();
 
