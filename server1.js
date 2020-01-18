@@ -38,6 +38,7 @@ net.createServer(function (sock) {
                 sock.write("BINGO");
                 // console.log(' ', +data);
                 sock.destroy();
+                
             }
             else {
                 console.log("WRONG");
