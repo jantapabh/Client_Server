@@ -22,7 +22,7 @@ client.on('data', function (data) {
 
     if( i < 5 ){
 
-        i = i+ 1;
+        i = i + 1;
 
         if(data == "BINGO")
         {
@@ -36,7 +36,7 @@ client.on('data', function (data) {
             var answer = Math.floor(Math.random() * 21);
             word = parseInt(answer);
             client.write(word+'');
-            console.log(' ',+data);
+            console.log(' ',word);
             console.log("Send Success");
 
         }
