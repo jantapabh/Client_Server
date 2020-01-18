@@ -4,11 +4,10 @@ var net = require('net');
 var HOST = '127.0.0.1';
 var PORT = 6969;
 var j = 0;
-var number = ["1","5","7","15","20"];
-
+var number = ["1", "5", "7", "15", "20"];
 var word = "";
+word = data + '';
 
-word = data+'';
 
 net.createServer(function (sock) {
 
@@ -21,30 +20,32 @@ net.createServer(function (sock) {
     sock.on('data', function (data) {
 
         // console.log('DATA ' + sock.remoteAddress + ': ' + data);
-      
 
-        sock.write("OK");
+        if (data.length == 10) {
 
-      
-
-        if (j < 5) {
-
-            j = j + 1;
-
-            if (data == number.indexOf) {
-
-                console.log("BINGO");
-                sock.write("BINGO");
-                // console.log(' ', +data);
-                sock.destroy();
-
-            }
-            else {
-                console.log("WRONG");
-                sock.write("WRONG");
-                // console.log(' ', +data);
+            sock.write("OK");
 
 
+
+            if (j < 5) {
+
+                j = j + 1;
+
+                if (data == number.indexOf) {
+
+                    // console.log("BINGO");
+                    sock.write("BINGO");
+                    // console.log(' ', +data);
+                    sock.destroy();
+
+                }
+                else {
+                    // console.log("WRONG");
+                    sock.write("WRONG");
+                    // console.log(' ', +data);
+
+
+                }
             }
         }
         //่ส่วนตอบกลับไยัง client
