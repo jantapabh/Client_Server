@@ -16,6 +16,7 @@ net.createServer(function(sock) {
        // data คือส่วนที่ client write มานั่นเอง
    });
 
+   
 
    sock.on('close', function(data) {
        console.log('CLOSED: ' + sock.remoteAddress +' '+ sock.remotePort);
