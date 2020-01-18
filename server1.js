@@ -4,7 +4,7 @@ var net = require('net');
 var HOST = '127.0.0.1';
 var PORT = 6969;
 var j = 0;
-var number = ["1", "5", "7", "15", "20"];
+const number = ["1", "5", "7", "15", "20"];
 var word = "";
 word = data + '';
 
@@ -51,6 +51,7 @@ net.createServer(function (sock) {
 
 
             sock.write("Wrong Usename");
+            client.destroy();
         }
         //่ส่วนตอบกลับไยัง client
 
