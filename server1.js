@@ -23,7 +23,6 @@ net.createServer(function (sock) {
 
         var number = ["1","5","7","15","20"];
 
-
         var word = "";
 
         word = data+'';
@@ -38,7 +37,7 @@ net.createServer(function (sock) {
                 sock.write("BINGO");
                 // console.log(' ', +data);
                 sock.destroy();
-                
+
             }
             else {
                 console.log("WRONG");
