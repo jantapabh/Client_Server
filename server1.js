@@ -23,7 +23,7 @@ net.createServer(function (sock) {
 
         // console.log('DATA ' + sock.remoteAddress + ': ' + data);
 
-        if (data.length == 10) {
+        // if (data.length == 10) {
 
 
             sock.write("OK");
@@ -41,21 +41,21 @@ net.createServer(function (sock) {
                     sock.destroy();
 
                 }
-                else {
-                    // console.log("WRONG");
-                    sock.write("WRONG");
-                    // console.log(' ', +data);
+                // else {
+                //     // console.log("WRONG");
+                //     sock.write("WRONG");
+                //     // console.log(' ', +data);
 
 
-                }
+                // }
             }
         }
-        else{
+        // else{
 
 
-            sock.write("Wrong Usename");
-            sock.destroy();
-        }
+        //     sock.write("Wrong Usename");
+        //     sock.destroy();
+        // }
         //่ส่วนตอบกลับไยัง client
 
     });

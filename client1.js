@@ -11,7 +11,7 @@ var client = new net.Socket();
 client.connect(PORT, HOST, function () {
 
     console.log('CONNECTED TO: ' + HOST + ':' + PORT);
-    client.write('6035512034');
+    client.write("6035512034");
 
 });
 
