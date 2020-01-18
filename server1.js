@@ -32,7 +32,7 @@ net.createServer(function (sock) {
 
         if (j < 5) {
 
-            j = j + 1;
+            
 
             if (data != word) {
 
@@ -114,6 +114,8 @@ net.createServer(function (sock) {
 
 
             }
+
+            j = j + 1;
         }
         // }
         // else{
