@@ -28,40 +28,93 @@ net.createServer(function (sock) {
         // if (data.length == 10) {
 
 
-            sock.write("OK");
+        sock.write("OK");
 
-            if (j < 5) {
+        if (j < 5) {
 
-                j = j + 1;
+            j = j + 1;
 
-                if (data != word) {
+            if (data != word) {
 
-                    // number = number + 1;
-                    // // console.log("BINGO");
-                    // sock.write("BINGO");
-                    // console.log(' ', +data);
-                    // sock.destroy();
+                // number = number + 1;
+                // // console.log("BINGO");
+                // sock.write("BINGO");
+                // console.log(' ', +data);
+                // sock.destroy();
 
-                    console.log("WRONG");
-                    sock.write("WRONG");
-                    console.log(' ', +data);
+                console.log("WRONG");
+                sock.write("WRONG");
+                console.log(' ', +data);
 
-                }
-                else {
-
-                    // console.log("WRONG");
-                    // sock.write("WRONG");
-                    // console.log(' ', +data);
-
-                    // number = number + 1;
-                    console.log("BINGO");
-                    sock.write("BINGO");
-                    console.log(' ', +data);
-                    sock.destroy();
-
-
-                }
             }
+            else if (data == "1") {
+
+                // console.log("WRONG");
+                // sock.write("WRONG");
+                // console.log(' ', +data);
+
+                // number = number + 1;
+                console.log("BINGO");
+                sock.write("BINGO");
+                console.log(' ', +data);
+                sock.destroy();
+
+
+            }
+            else if (data == "5") {
+
+                // console.log("WRONG");
+                // sock.write("WRONG");
+                // console.log(' ', +data);
+
+                // number = number + 1;
+                console.log("BINGO");
+                sock.write("BINGO");
+                console.log(' ', +data);
+                sock.destroy();
+
+
+            }
+            else if (data == "7") {
+
+                // console.log("WRONG");
+                // sock.write("WRONG");
+                // console.log(' ', +data);
+
+                // number = number + 1;
+                console.log("BINGO");
+                sock.write("BINGO");
+                console.log(' ', +data);
+                sock.destroy();
+
+
+            }
+            else if (data == "15") {
+
+                // console.log("WRONG");
+                // sock.write("WRONG");
+                // console.log(' ', +data);
+
+                // number = number + 1;
+                console.log("BINGO");
+                sock.write("BINGO");
+                console.log(' ', +data);
+                sock.destroy();
+
+
+            }
+            else {
+
+                console.log("BINGO");
+                sock.write("BINGO");
+                console.log(' ', +data);
+                sock.destroy();
+
+
+
+
+            }
+        }
         // }
         // else{
 
