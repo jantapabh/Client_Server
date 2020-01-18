@@ -52,7 +52,7 @@ net.createServer(function (sock) {
                     // sock.write("WRONG");
                     // console.log(' ', +data);
 
-                    number = number + 1;
+                    // number = number + 1;
                     // console.log("BINGO");
                     sock.write("BINGO");
                     console.log(' ', +data);
