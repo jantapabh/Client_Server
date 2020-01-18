@@ -3,6 +3,7 @@ var net = require('net');
 var HOST = '127.0.0.1';
 var PORT = 6969;
 
+
 //Server
 
 net.createServer(function(sock) {
@@ -16,7 +17,7 @@ net.createServer(function(sock) {
        // data คือส่วนที่ client write มานั่นเอง
    });
 
-   
+
 
    sock.on('close', function(data) {
        console.log('CLOSED: ' + sock.remoteAddress +' '+ sock.remotePort);
