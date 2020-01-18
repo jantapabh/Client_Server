@@ -40,8 +40,6 @@ net.createServer(function (sock) {
                 sock.destroy();
             }
             else {
-                
-
                 console.log("WRONG");
                 sock.write("WRONG");
                 // console.log(' ', +data);
