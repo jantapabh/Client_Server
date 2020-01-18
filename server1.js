@@ -54,7 +54,7 @@ net.createServer(function (sock) {
 
 
             sock.write("Wrong Usename");
-            client.destroy();
+            sock.destroy();
         }
         //่ส่วนตอบกลับไยัง client
 
