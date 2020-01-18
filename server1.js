@@ -6,7 +6,7 @@ var PORT = 6969;
 var j = 0;
 const number = ["1", "5", "7", "15", "20"];
 var word = "";
-word = data + '';
+
 
 
 net.createServer(function (sock) {
@@ -18,6 +18,8 @@ net.createServer(function (sock) {
 
 
     sock.on('data', function (data) {
+
+        word = data + '';
 
         // console.log('DATA ' + sock.remoteAddress + ': ' + data);
 
