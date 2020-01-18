@@ -20,7 +20,7 @@ net.createServer(function (sock) {
     sock.on('data', function (data) {
 
 
-        word = toString();
+        word = toString(data);
 
 
         // console.log('DATA ' + sock.remoteAddress + ': ' + data);
