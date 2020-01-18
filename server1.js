@@ -4,7 +4,11 @@ var net = require('net');
 var HOST = '127.0.0.1';
 var PORT = 6969;
 var j = 0;
+var number = ["1","5","7","15","20"];
 
+var word = "";
+
+word = data+'';
 
 net.createServer(function (sock) {
 
@@ -19,13 +23,9 @@ net.createServer(function (sock) {
         // console.log('DATA ' + sock.remoteAddress + ': ' + data);
       
 
-            sock.write("OK");
+        sock.write("OK");
 
-        var number = ["1","5","7","15","20"];
-
-        var word = "";
-
-        word = data+'';
+      
 
         if (j < 5) {
 
