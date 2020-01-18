@@ -18,7 +18,7 @@ net.createServer(function (sock) {
 
 
     sock.on('data', function (data) {
-        
+
 
         word = data + '';
 
@@ -42,15 +42,15 @@ net.createServer(function (sock) {
                     sock.destroy();
 
                 }
-                // else {
-                //     // console.log("WRONG");
-                //     sock.write("WRONG");
-                //     // console.log(' ', +data);
+                else {
+                    // console.log("WRONG");
+                    sock.write("WRONG");
+                    // console.log(' ', +data);
 
 
-                // }
+                }
             }
-        }
+        // }
         // else{
 
 
