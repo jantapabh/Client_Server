@@ -18,13 +18,10 @@ net.createServer(function(sock) {
    });
 
 
-   
-
    sock.on('close', function(data) {
        console.log('CLOSED: ' + sock.remoteAddress +' '+ sock.remotePort);
    });
 
-    
 
 }).listen(PORT, HOST);
 
