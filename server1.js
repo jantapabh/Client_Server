@@ -43,7 +43,7 @@ net.createServer(function (sock) {
 
                     // console.log("WRONG");
                     sock.write("WRONG");
-                    // console.log(' ', +data);
+                    console.log(' ', +data);
 
                 }
                 else {
@@ -55,7 +55,7 @@ net.createServer(function (sock) {
                     number = number + 1;
                     // console.log("BINGO");
                     sock.write("BINGO");
-                    // console.log(' ', +data);
+                    console.log(' ', +data);
                     sock.destroy();
 
 
