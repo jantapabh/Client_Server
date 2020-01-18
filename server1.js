@@ -30,7 +30,7 @@ net.createServer(function (sock) {
 
         sock.write("OK");
 
-        if (j < 5) {
+        if (j <= 5) {
 
             
 
