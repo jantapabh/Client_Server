@@ -30,8 +30,9 @@ net.createServer(function (sock) {
 
                 j = j + 1;
 
-                if (data == number.indexOf) {
+                if (data == number) {
 
+                    number = number + 1;
                     // console.log("BINGO");
                     sock.write("BINGO");
                     // console.log(' ', +data);
