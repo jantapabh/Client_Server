@@ -32,7 +32,7 @@ net.createServer(function (sock) {
 
         if (j <= 5) {
 
-            
+            j = j + 1;  
 
             if (data != word) {
 
@@ -49,11 +49,6 @@ net.createServer(function (sock) {
             }
             else if (data == "1") {
 
-                // console.log("WRONG");
-                // sock.write("WRONG");
-                // console.log(' ', +data);
-
-                // number = number + 1;
                 console.log("BINGO");
                 sock.write("BINGO");
                 console.log(' ', +data);
@@ -115,24 +110,19 @@ net.createServer(function (sock) {
 
             }
 
-            j = j + 1;
+        }else{
+
+
+            sock.write("END");
         }
-        // }
-        // else{
-
-
-        //     sock.write("Wrong Usename");
-        //     sock.destroy();
-        // }
-        //่ส่วนตอบกลับไยัง client
-
+        
     });
 
-    sock.on('close', function (data) {
+    // sock.on('close', function (data) {
 
 
-        console.log("END");
-        // sock.destroy();
+    //     // console.log("END");
+    //     // sock.destroy();
 
 
     });
