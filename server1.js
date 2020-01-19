@@ -6,23 +6,22 @@ var PORT = 6969;
 var j = 0;
 const number = ["1", "5", "7", "15", "20"];
 var word = "";
-var server = new net.Socket();
 
 
 
-server.createServer(function (server) {
+net.createServer(function (sock) {
 
 
 
-    console.log('Strat connect : ' + server.remoteAddress + ':' + server.remotePort);
+    console.log('Strat connect : ' + sock.remoteAddress + ':' + sock.remotePort);
 
 
-    server.on('data', function (data) {
+    sock.on('data', function (data) {
 
 
         word = toString(data);
 
-        server.write("OK");
+        sock.write("OK");
 
         if (j <= 5) {
 
@@ -31,16 +30,16 @@ server.createServer(function (server) {
             if (data != word) {
 
                 console.log("WRONG");
-                server.write("WRONG");
+                sock.write("WRONG");
                 console.log(' ', +data);
 
             }
             else if (data == "1") {
 
                 console.log("BINGO");
-                server.write("BINGO");
+                sock.write("BINGO");
                 console.log(' ', +data);
-                server.destroy();
+                sock.destroy();
 
 
             }
@@ -48,9 +47,9 @@ server.createServer(function (server) {
 
             
                 console.log("BINGO");
-                server.write("BINGO");
+                sock.write("BINGO");
                 console.log(' ', +data);
-                server.destroy();
+                sock.destroy();
 
 
             }
@@ -62,9 +61,9 @@ server.createServer(function (server) {
 
                 // number = number + 1;
                 console.log("BINGO");
-                server.write("BINGO");
+                sock.write("BINGO");
                 console.log(' ', +data);
-                server.destroy();
+                sock.destroy();
 
 
             }
@@ -76,18 +75,18 @@ server.createServer(function (server) {
 
                 // number = number + 1;
                 console.log("BINGO");
-                server.write("BINGO");
+                sock.write("BINGO");
                 console.log(' ', +data);
-                server.destroy();
+                sock.destroy();
 
 
             }
             else {
 
                 console.log("BINGO");
-                server.write("BINGO");
+                sock.write("BINGO");
                 console.log(' ', +data);
-                server.destroy();
+                sock.destroy();
 
 
 
@@ -97,13 +96,21 @@ server.createServer(function (server) {
         }else{
 
 
-            server.write("END");
+            sock.write("END");
         }
         
     });
 
+    // sock.on('close', function (data) {
 
-    server.on('error', function (error) {
+
+    //     // console.log("END");
+    //     // sock.destroy();
+
+
+    // });
+
+    sock.on('error', function (error) {
         console.log("Eror !!!!!!!");
     });
 
