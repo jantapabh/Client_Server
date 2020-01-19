@@ -10,7 +10,7 @@ var server = new net.Socket();
 
 
 
-server.createServer(function (sock) {
+server.createServer(function (server) {
 
 
 
