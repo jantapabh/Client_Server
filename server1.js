@@ -6,29 +6,23 @@ var PORT = 6969;
 var j = 0;
 const number = ["1", "5", "7", "15", "20"];
 var word = "";
+var server = new net.Socket();
 
 
 
-net.createServer(function (sock) {
-
-    // console.log(sock);
+server.createServer(function (sock) {
 
 
-    console.log('Strat connect : ' + sock.remoteAddress + ':' + sock.remotePort);
+
+    console.log('Strat connect : ' + server.remoteAddress + ':' + server.remotePort);
 
 
-    sock.on('data', function (data) {
+    server.on('data', function (data) {
 
 
         word = toString(data);
 
-
-        // console.log('DATA ' + sock.remoteAddress + ': ' + data);
-
-        // if (data.length == 10) {
-
-
-        sock.write("OK");
+        server.write("OK");
 
         if (j <= 5) {
 
@@ -36,37 +30,27 @@ net.createServer(function (sock) {
 
             if (data != word) {
 
-                // number = number + 1;
-                // // console.log("BINGO");
-                // sock.write("BINGO");
-                // console.log(' ', +data);
-                // sock.destroy();
-
                 console.log("WRONG");
-                sock.write("WRONG");
+                server.write("WRONG");
                 console.log(' ', +data);
 
             }
             else if (data == "1") {
 
                 console.log("BINGO");
-                sock.write("BINGO");
+                server.write("BINGO");
                 console.log(' ', +data);
-                sock.destroy();
+                server.destroy();
 
 
             }
             else if (data == "5") {
 
-                // console.log("WRONG");
-                // sock.write("WRONG");
-                // console.log(' ', +data);
-
-                // number = number + 1;
+            
                 console.log("BINGO");
-                sock.write("BINGO");
+                server.write("BINGO");
                 console.log(' ', +data);
-                sock.destroy();
+                server.destroy();
 
 
             }
@@ -78,9 +62,9 @@ net.createServer(function (sock) {
 
                 // number = number + 1;
                 console.log("BINGO");
-                sock.write("BINGO");
+                server.write("BINGO");
                 console.log(' ', +data);
-                sock.destroy();
+                server.destroy();
 
 
             }
@@ -92,18 +76,18 @@ net.createServer(function (sock) {
 
                 // number = number + 1;
                 console.log("BINGO");
-                sock.write("BINGO");
+                server.write("BINGO");
                 console.log(' ', +data);
-                sock.destroy();
+                server.destroy();
 
 
             }
             else {
 
                 console.log("BINGO");
-                sock.write("BINGO");
+                server.write("BINGO");
                 console.log(' ', +data);
-                sock.destroy();
+                server.destroy();
 
 
 
@@ -113,21 +97,13 @@ net.createServer(function (sock) {
         }else{
 
 
-            sock.write("END");
+            server.write("END");
         }
         
     });
 
-    // sock.on('close', function (data) {
 
-
-    //     // console.log("END");
-    //     // sock.destroy();
-
-
-    // });
-
-    sock.on('error', function (error) {
+    server.on('error', function (error) {
         console.log("Eror !!!!!!!");
     });
 
