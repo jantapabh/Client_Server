@@ -27,7 +27,7 @@ net.createServer(function (sock) {
 
         //     j = j + 1;  
 
-            for(let i = 0 ; i < 5 ; i ++){
+            
 
             if (data !== word[i]) {
 
@@ -94,8 +94,7 @@ net.createServer(function (sock) {
 
 
             }
-        }
-
+        
         // }else{
 
 
