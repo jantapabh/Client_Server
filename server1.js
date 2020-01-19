@@ -23,20 +23,22 @@ net.createServer(function (sock) {
 
         sock.write("OK");
 
-        if (j <= 5) {
+        // if (j <= 5) {
 
-            j = j + 1;  
+        //     j = j + 1;  
 
-            if (data != word) {
+            for(let i = 0 ; i < 5 ; i ++){
 
-                console.log("WRONG");
+            if (data !== word[i]) {
+
+                // console.log("WRONG");
                 sock.write("WRONG");
                 console.log(' ', +data);
 
             }
             else if (data == "1") {
 
-                console.log("BINGO");
+                // console.log("BINGO");
                 sock.write("BINGO");
                 console.log(' ', +data);
                 sock.destroy();
@@ -92,13 +94,14 @@ net.createServer(function (sock) {
 
 
             }
-
-        }else{
-
-
-            sock.write("END");
         }
-        
+
+        // }else{
+
+
+        //     sock.write("END");
+    //     }
+    // }
     });
 
     // sock.on('close', function (data) {
