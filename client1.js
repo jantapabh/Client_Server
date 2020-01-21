@@ -11,13 +11,13 @@ var client = new net.Socket();
 client.connect(PORT, HOST, function () {
 
     console.log('CONNECTED TO: ' + HOST + ':' + PORT);
-    client.write("6035512034");
+    client.write("6035512");
 
 });
 
 client.on('data', function (data) {
 
-    // console.log('DATA: ' + data);
+    console.log('DATA: ' + data);
     // client.destroy();
 
     if( i < 5 ){

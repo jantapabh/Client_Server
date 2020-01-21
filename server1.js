@@ -18,6 +18,9 @@ net.createServer(function (sock) {
 
     sock.on('data', function (data) {
 
+        if( j < 5){
+
+            j = j + 1;
 
         if(data.length === 10) {
 
@@ -40,7 +43,6 @@ net.createServer(function (sock) {
                 console.log(' ', +data);
                 sock.destroy();
 
-
             }
             else{
 
@@ -48,6 +50,7 @@ net.createServer(function (sock) {
             }
 
         }
+    }
     );
 
     sock.on('close', function (data) {
