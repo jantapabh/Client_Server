@@ -4,7 +4,7 @@ var net = require('net');
 var HOST = '127.0.0.1';
 var PORT = 6969;
 var j = 0;
-const number = ["1", "5", "7", "15", "20"];
+const number = "1";
 var word = "";
 
 
@@ -40,54 +40,8 @@ net.createServer(function (sock) {
 
 
             }
-            else if (data.toString() == "5") {
-
             
-                console.log("BINGO");
-                sock.write("BINGO");
-                console.log(' ', +data);
-                sock.destroy();
-
-
-            }
-            else if (data.toString() == "7") {
-
-                // console.log("WRONG");
-                // sock.write("WRONG");
-                // console.log(' ', +data);
-
-                // number = number + 1;
-                console.log("BINGO");
-                sock.write("BINGO");
-                console.log(' ', +data);
-                sock.destroy();
-
-
-            }
-            else if (data.toString() == "15") {
-
-                // console.log("WRONG");
-                // sock.write("WRONG");
-                // console.log(' ', +data);
-
-                // number = number + 1;
-                console.log("BINGO");
-                sock.write("BINGO");
-                console.log(' ', +data);
-                sock.destroy();
-
-
-            }
-            else {
-
-                console.log("BINGO");
-                sock.write("BINGO");
-                console.log(' ', +data);
-                sock.destroy();
-
-            }
-     
-    });
+        });
 
     sock.on('close', function (data) {
 
