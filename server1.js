@@ -14,19 +14,16 @@ net.createServer(function (sock) {
 
 
     console.log('Strat connect : ' + sock.remoteAddress + ':' + sock.remotePort);
+    
 
 
     sock.on('data', function (data) {
 
+        
+
         if (data.length == 10) {
+            
             sock.write("OK");
-
-        }
-        else {
-
-            sock.write("Wrong Username");
-            sock.destroy();
-
 
         }
 
@@ -34,7 +31,7 @@ net.createServer(function (sock) {
 
             j = j + 1;
 
-            if (data.toString() == number) {
+            if (data.toString() == number.toString()) {
 
                 sock.write("BINGO");
                 var number2 = Math.floor(Math.random() * 21);
@@ -48,9 +45,9 @@ net.createServer(function (sock) {
 
             }
         }
+        
 
-    }
-    );
+    });
 
     sock.on('close', function (data) {
 
