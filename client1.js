@@ -20,28 +20,27 @@ client.on('data', function (data) {
     console.log('DATA: ' + data);
     // client.destroy();
 
-    if( i < 5 ){
+    if (i < 5) {
 
         i = i + 1;
 
-        if(data == "BINGO")
-        {
-            
+        if (data == "BINGO") {
+
             console.log("Number Correct");
-            console.log(' ',+data);
+            console.log(' ', +data);
             client.destroy();
         }
-        else{
+        else {
 
             var answer = Math.floor(Math.random() * 21);
             word = parseInt(answer);
-            client.write(word+'');
-            console.log(' ',word);
+            client.write(word + '');
+            console.log(' ', word);
             console.log("Send Success");
 
         }
     }
-       
+
 });
 
 client.on('error', function (error) {
