@@ -47,6 +47,7 @@ net.createServer(function (sock) {
             else{
 
                 sock.write("Wrong Username");
+                sock.destroy();
             }
 
         }
