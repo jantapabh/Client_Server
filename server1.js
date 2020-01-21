@@ -4,7 +4,7 @@ var net = require('net');
 var HOST = '127.0.0.1';
 var PORT = 6969;
 var j = 0;
-const number = "1";
+const number = "15";
 var word = "";
 
 
@@ -19,19 +19,21 @@ net.createServer(function (sock) {
     sock.on('data', function (data) {
 
 
-        word = toString(number);
+        if(data.length === 10){
 
-        sock.write("OK");
+
+                sock.write("OK");
       
 
-            if (data.toString() !== word) {
+           if (data.toString() !== number) {
 
                 console.log("WRONG");
                 sock.write("WRONG");
                 console.log(' ', +data);
 
+                
             }
-            else if (data.toString() == "1") {
+            else{
 
                 console.log("BINGO");
                 sock.write("BINGO");
@@ -40,6 +42,10 @@ net.createServer(function (sock) {
 
 
             }
+        }else{
+            sock.write("Wrong Username");
+
+        }
             
         });
 
