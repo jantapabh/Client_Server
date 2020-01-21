@@ -19,13 +19,13 @@ net.createServer(function (sock) {
     sock.on('data', function (data) {
 
 
-        if(data.length === 10){
+        if (data.length === 10) {
 
 
-                sock.write("OK");
+            sock.write("OK");
       
 
-           else if(data.toString() !== number) {
+           else if (data.toString() !== number) {
 
                 console.log("WRONG");
                 sock.write("WRONG");
@@ -33,7 +33,7 @@ net.createServer(function (sock) {
 
 
             }
-            else if(data.toString() == number) {
+            else if (data.toString() == number) {
 
                 console.log("BINGO");
                 sock.write("BINGO");
@@ -42,11 +42,11 @@ net.createServer(function (sock) {
 
 
             }
-            else{
+            else {
 
                 sock.write("Wrong Username");
             }
-            
+
         }
     });
 
