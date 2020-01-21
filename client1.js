@@ -27,6 +27,7 @@ client.on('data', function (data) {
         if (data == "BINGO") {
 
             console.log("Number Correct");
+            console.log(' ', +data);
             client.destroy();
         }
         else {
@@ -35,7 +36,7 @@ client.on('data', function (data) {
             word = parseInt(answer);
             client.write(word + '');
             console.log(' ', word);
-            console.log("Send Success");
+            
 
         }
     }
