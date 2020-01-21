@@ -22,10 +22,12 @@ net.createServer(function (sock) {
 
             j = j + 1;
 
-        if(data.length === 10) {
+        if(data.length != 10) {
 
 
-            sock.write("OK");
+            // sock.write("OK");
+            sock.write("Wrong Username");
+                sock.destroy();
         }
 
            else if(data.toString() !== number) {
@@ -46,8 +48,8 @@ net.createServer(function (sock) {
             }
             else{
 
-                sock.write("Wrong Username");
-                sock.destroy();
+                
+                sock.write("OK");
             }
 
         }
