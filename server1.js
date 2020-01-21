@@ -47,7 +47,8 @@ net.createServer(function (sock) {
                 sock.write("Wrong Username");
             }
             
-        });
+        }
+    });
 
     sock.on('close', function (data) {
 
