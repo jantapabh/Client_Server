@@ -27,7 +27,7 @@ net.createServer(function (sock) {
 
             // sock.write("OK");
             sock.write("Wrong Username");
-                sock.destroy();
+            sock.destroy();
         }
 
            else if(data.toString() !== number) {
@@ -47,7 +47,6 @@ net.createServer(function (sock) {
 
             }
             else{
-
                 
                 sock.write("OK");
             }
