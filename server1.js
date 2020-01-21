@@ -23,42 +23,31 @@ net.createServer(function (sock) {
 
             j = j + 1;
 
-            // if (data.length == 10) {
-
                 sock.write("OK");
-            //     // sock.destroy();
-            // }
 
          if (data.length != 10)
         {
-
             sock.write("Wrong Username");
             sock.destroy();
 
-
         }
-            
          else if (data.toString() == number) {
                     
             sock.write("BINGO");
+            var number2 = Math.floor(Math.random() * 21);
+            word = parseInt(number2);
+            number = word.toString();
+            
             sock.destroy();
 
             }
-         else if(data.toString() != number){
-           
+         else{
                     sock.write("WRONG");
                     // sock.destroy();
 
-                }
+            }
 
-         else{
-
-            sock.write("END");
-            sock.destroy();
-
-
-         }       
-
+         
         }
 
 
