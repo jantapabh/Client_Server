@@ -25,15 +25,15 @@ net.createServer(function (sock) {
                 sock.write("OK");
       
 
-           if (data.toString() !== number) {
+           else if(data.toString() !== number) {
 
                 console.log("WRONG");
                 sock.write("WRONG");
                 console.log(' ', +data);
 
-                
+
             }
-            else{
+            else if(data.toString() == number) {
 
                 console.log("BINGO");
                 sock.write("BINGO");
@@ -42,10 +42,10 @@ net.createServer(function (sock) {
 
 
             }
-        }else{
-            sock.write("Wrong Username");
+            else{
 
-        }
+                sock.write("Wrong Username");
+            }
             
         });
 
