@@ -22,16 +22,21 @@ net.createServer(function (sock) {
         word = toString(number);
 
         sock.write("OK");
-      
 
-            if (data.toString() !== word) {
+        // if (j <= 5) {
+
+        //     j = j + 1;  
+
+            
+
+            if (data !== word) {
 
                 console.log("WRONG");
                 sock.write("WRONG");
                 console.log(' ', +data);
 
             }
-            else if (data.toString() == "1") {
+            else if (data == "1") {
 
                 console.log("BINGO");
                 sock.write("BINGO");
@@ -40,7 +45,7 @@ net.createServer(function (sock) {
 
 
             }
-            else if (data.toString() == "5") {
+            else if (data == "5") {
 
             
                 console.log("BINGO");
@@ -50,7 +55,7 @@ net.createServer(function (sock) {
 
 
             }
-            else if (data.toString() == "7") {
+            else if (data == "7") {
 
                 // console.log("WRONG");
                 // sock.write("WRONG");
@@ -64,7 +69,7 @@ net.createServer(function (sock) {
 
 
             }
-            else if (data.toString() == "15") {
+            else if (data == "15") {
 
                 // console.log("WRONG");
                 // sock.write("WRONG");
@@ -85,18 +90,27 @@ net.createServer(function (sock) {
                 console.log(' ', +data);
                 sock.destroy();
 
+
+
+
             }
-     
+        
+        // }else{
+
+
+        //     sock.write("END");
+    //     }
+    // }
     });
 
-    sock.on('close', function (data) {
+    // sock.on('close', function (data) {
 
 
-        // console.log("END");
-        // sock.destroy();
+    //     // console.log("END");
+    //     // sock.destroy();
 
 
-    });
+    // });
 
     sock.on('error', function (error) {
         console.log("Eror !!!!!!!");
