@@ -27,7 +27,6 @@ client.on('data', function (data) {
         if (data == "BINGO") {
 
             console.log("Number Correct");
-            console.log(' ', +data);
             client.destroy();
         }
         else {

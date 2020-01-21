@@ -19,39 +19,43 @@ net.createServer(function (sock) {
     sock.on('data', function (data) {
 
 
+  
+
         if (j < 5) {
 
             j = j + 1;
-
 
             if (data.length == 10) {
 
                 sock.write("OK");
                 // sock.destroy();
+            }
+
+            else if (data.length != 10)
+        {
+
+            sock.write("Wrong Username");
+            sock.destroy();
+
+
+        }
             
-            if (data.toString() !== number) {
-
-                    sock.write("OK");
-                    console.log("WRONG");
+         else if (data.toString() !== number) {
+                    
                     sock.write("WRONG");
-                    console.log(' ', +data);
-
 
             }
-            else if (data.toString() == number) {
-
-                    sock.write("OK");
-                    console.log("BINGO");
+         else   {
+           
                     sock.write("BINGO");
-                    // console.log(' ', +data);
                     sock.destroy();
 
                 }
 
-            }
-            
-
         }
+
+
+        
     }
     );
 
