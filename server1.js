@@ -18,20 +18,41 @@ net.createServer(function (sock) {
 
     sock.on('data', function (data) {
 
+        
+        if (data.length == 10) {
+
+
+            sock.write("OK");
+          
+        }
+        else  if (data.length != 10) {
+
+
+            // sock.write("OK");
+            sock.write("Wrong Username");
+            sock.destroy();
+        }
+
         if (j < 5) {
 
             j = j + 1;
 
 
-            if (data.length != 10) {
+            // if (data.length == 10) {
 
 
-                // sock.write("OK");
-                sock.write("Wrong Username");
-                sock.destroy();
-            }
+            //     sock.write("OK");
+              
+            // }
+            // else  if (data.length != 10) {
 
-            else if (data.toString() !== number) {
+
+            //     // sock.write("OK");
+            //     sock.write("Wrong Username");
+            //     sock.destroy();
+            // }
+
+          if (data.toString() !== number) {
 
                 console.log("WRONG");
                 sock.write("WRONG");
@@ -47,10 +68,7 @@ net.createServer(function (sock) {
                 sock.destroy();
 
             }
-            else {
-
-                sock.write("OK");
-            }
+           
 
         }
     }
