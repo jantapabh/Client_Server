@@ -19,8 +19,6 @@ net.createServer(function (sock) {
     sock.on('data', function (data) {
 
 
-  
-
         if (j < 5) {
 
             j = j + 1;
@@ -46,12 +44,20 @@ net.createServer(function (sock) {
             sock.destroy();
 
             }
-         else   {
+         else if(data.toString() != number){
            
                     sock.write("WRONG");
                     // sock.destroy();
 
                 }
+
+         else{
+
+            sock.write("END");
+            sock.destroy();
+
+
+         }       
 
         }
 
@@ -63,8 +69,8 @@ net.createServer(function (sock) {
     sock.on('close', function (data) {
 
 
-        // console.log("END");
-        // sock.destroy();
+        console.log("END");
+        sock.destroy();
 
 
     });
