@@ -25,13 +25,13 @@ net.createServer(function (sock) {
 
             j = j + 1;
 
-            if (data.length == 10) {
+            // if (data.length == 10) {
 
                 sock.write("OK");
-                // sock.destroy();
-            }
+            //     // sock.destroy();
+            // }
 
-            else if (data.length != 10)
+         if (data.length != 10)
         {
 
             sock.write("Wrong Username");
@@ -40,15 +40,16 @@ net.createServer(function (sock) {
 
         }
             
-         else if (data.toString() !== number) {
+         else if (data.toString() == number) {
                     
-                    sock.write("WRONG");
+            sock.write("BINGO");
+            sock.destroy();
 
             }
          else   {
            
-                    sock.write("BINGO");
-                    sock.destroy();
+                    sock.write("WRONG");
+                    // sock.destroy();
 
                 }
 
