@@ -3,7 +3,7 @@
 var net = require('net');
 var HOST = '127.0.0.1';
 var PORT = 6969;
-var j = 0;
+var j = 1;
 var number = Math.floor(Math.random() * 21);
 var word = "";
 var i = 1;
@@ -20,7 +20,7 @@ net.createServer(function (sock) {
 
     sock.on('data', function (data) {
 
-        if (j < 5) {
+        if (j <= 5) {
 
 
 
@@ -31,7 +31,7 @@ net.createServer(function (sock) {
                     sock.write("OK");
                     i = 0;
 
-                }else{
+                } else {
 
                     sock.write("Wrong Username");
                     sock.destroy();
@@ -39,30 +39,30 @@ net.createServer(function (sock) {
                 }
             }
 
-            if(i == 0 ){
+            if (i == 0) {
 
-                if(data.length == 1 || data.length == 2){
+                if (data.length == 1 || data.length == 2) {
 
-            if (data.toString() == number.toString()) {
+                    if (data.toString() == number.toString()) {
 
 
-                sock.write("BINGO");
+                        sock.write("BINGO");
 
-                sock.destroy();
+                        sock.destroy();
 
+
+                    }
+                    else {
+
+                        sock.write("Wrong");
+                    }
+                }
+
+
+                j = j + 1;
 
             }
-            else {
-
-                sock.write("Wrong");
-            }
         }
-
-
-            j = j + 1;
-
-        }
-    }
     });
 
     sock.on('close', function (data) {
