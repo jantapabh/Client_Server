@@ -2,8 +2,8 @@
 // TCP Client
 
 var net = require('net');
-var HOST = '34.0.0.0';
-var PORT = 1414;
+var HOST = '127.0.0.1';
+var PORT = 6969;
 let i = 0;
 
 
@@ -20,7 +20,7 @@ client.on('data', function (data) {
     console.log('DATA: ' + data);
     // client.destroy();
 
-    if (i < 5) {
+    if (i < 6) {
 
         i = i + 1;
 
@@ -43,7 +43,7 @@ client.on('data', function (data) {
 });
 
 client.on('error', function (error) {
-    console.log("error");
+    // console.log(error);
 });
 
 
