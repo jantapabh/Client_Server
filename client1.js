@@ -32,7 +32,7 @@ client.on('data', function (data) {
         else {
 
             var answer = Math.floor(Math.random() * 21);
-            word = parseInt(answer + "");
+            word = parseInt(answer + '');
             client.write(word.toString());
           
             

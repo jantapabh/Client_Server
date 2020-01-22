@@ -47,8 +47,10 @@ net.createServer(function (sock) {
                         sock.write("BINGO");
                         console.log(number);
                         var number2 = Math.floor(Math.random() * 21);
-                        var number3 = parseInt(number2);
+                        console.log(number2);
+                        var number3 = parseInt(number2 + '');
                         number = number3;
+                        console.log(number3);
                         console.log(number);
                         sock.destroy();
                     }
