@@ -6,6 +6,7 @@ var PORT = 6969;
 var j = 0;
 var number = Math.floor(Math.random() * 21);
 var word = "";
+var i = 1;
 
 
 
@@ -14,44 +15,52 @@ net.createServer(function (sock) {
 
 
     console.log('Strat connect : ' + sock.remoteAddress + ':' + sock.remotePort);
-    
+
 
 
     sock.on('data', function (data) {
 
-        
 
-        if (data.length == 10) {
-            
-            sock.write("OK");
 
-        }
+        if (i == 1) {
 
-        if (j < 5) {
+            if (data.length == 10) {
 
-            j = j + 1;
+                sock.write("OK");
 
-            if (data.toString() == number.toString()) {
+                i = 1;
 
-                sock.write("BINGO");
-                var number2 = Math.floor(Math.random() * 21);
-                word = parseInt(number2);
-                number = word.toString();
-                sock.destroy();
             }
+
+            if( i = 1){
+
+                if (data.toString() == number.toString()) {
+
+                    sock.write("BINGO");
+                    sock.destroy();
+
+                } else {
+
+                    sock.write("WRONG");
+
+                }
+
+            }
+
             else {
 
-                sock.write("WRONG");
+
+                sock.write("Wrong Username");
+                i = 0;
+
 
             }
         }
-        
-
     });
 
     sock.on('close', function (data) {
 
-        sock.destroy();
+        // sock.destroy();
 
     });
 
