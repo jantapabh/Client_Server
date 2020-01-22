@@ -19,7 +19,7 @@ net.createServer(function (sock) {
 
     sock.on('data', function (data) {
 
-        if (j <= 6) {
+        if (j < 6) {
 
 
             if (i == 1) {
