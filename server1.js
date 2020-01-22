@@ -1,8 +1,8 @@
 // TCP Server
 
 var net = require('net');
-var HOST = '127.0.0.1';
-var PORT = 6969;
+var HOST = '34.0.0.0';
+var PORT = 1414;
 var j = 1;
 // var number = Math.floor(Math.random() * 21);
 var number = "15";
@@ -21,8 +21,7 @@ net.createServer(function (sock) {
 
     sock.on('data', function (data) {
 
-        if (j <= 5) {
-
+        if (j <= 6) {
 
 
             if (i == 1) {
