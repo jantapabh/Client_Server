@@ -48,9 +48,10 @@ net.createServer(function (sock) {
                         console.log(number);
                         var number2 = Math.floor(Math.random() * 21);
                         var number3 = parseInt(number2);
+                        sock.destroy();
                         number = number3.toString();
                         console.log(number);
-                        sock.destroy();
+                        // sock.destroy();
                     }
                     else {
 
