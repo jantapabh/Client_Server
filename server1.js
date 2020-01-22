@@ -50,8 +50,6 @@ net.createServer(function (sock) {
                         var number3 = parseInt(number2);
                         number = number3;
                         sock.destroy();
-
-
                     }
                     else {
 
