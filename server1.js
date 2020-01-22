@@ -39,7 +39,11 @@ net.createServer(function (sock) {
                 }
             }
 
-            if (i == 0 && data.toString() == number.toString()) {
+            if(i == 0 ){
+
+                if(data.length == 1 || data.length == 2){
+
+            if (data.toString() == number.toString()) {
 
 
                 sock.write("BINGO");
@@ -52,11 +56,13 @@ net.createServer(function (sock) {
 
                 sock.write("Wrong");
             }
+        }
 
 
             j = j + 1;
 
         }
+    }
     });
 
     sock.on('close', function (data) {
