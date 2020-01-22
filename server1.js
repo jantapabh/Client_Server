@@ -24,49 +24,52 @@ net.createServer(function (sock) {
 
         if (i == 1) {
 
-            if (data.length == 10) {
+            if (data.length == 10 && data.toString() == number) {
 
                 sock.write("OK");
+                // console.log(i);
+                sock.write("BINGO");
+                sock.destroy();
+
 
                 i = 1;
 
-            }
+            } else if(data.toString() != number){
 
-            if( i = 1){
 
-                if (data.toString() == number.toString()) {
+                sock.write("Wrong");
+                // console.log(i);
+                // sock.destroy();
 
-                    sock.write("BINGO");
-                    sock.destroy();
-
-                } else {
-
-                    sock.write("WRONG");
-
-                }
 
             }
+            else if(data.length != 10)
+            {
 
-            else {
+                sock.write("Wrong Useername");
+                sock.destroy();
+            }
+            else{
 
 
-                sock.write("Wrong Username");
-                i = 0;
-
-
+                sock.write("END");
             }
         }
+
+        
+
+    
     });
 
-    sock.on('close', function (data) {
+sock.on('close', function (data) {
 
-        // sock.destroy();
+    // sock.destroy();
 
-    });
+});
 
-    sock.on('error', function (error) {
-        // console.log("Eror");
-    });
+sock.on('error', function (error) {
+    console.log(error);
+});
 
 
 }).listen(PORT, HOST);

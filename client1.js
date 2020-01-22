@@ -11,7 +11,7 @@ var client = new net.Socket();
 client.connect(PORT, HOST, function () {
 
     console.log('CONNECTED TO: ' + HOST + ':' + PORT);
-    client.write("603551203455");
+    client.write("6035512034");
 
 });
 
@@ -34,7 +34,7 @@ client.on('data', function (data) {
 
             var answer = Math.floor(Math.random() * 21);
             // var answer = "15";
-            word = parseInt(answer);
+            word = parseInt(answer + "");
             client.write(word + '');
           
             
@@ -45,7 +45,7 @@ client.on('data', function (data) {
 });
 
 client.on('error', function (error) {
-    console.log("ERROR Connect");
+    console.log(error);
 });
 
 
