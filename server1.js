@@ -4,7 +4,6 @@ var net = require('net');
 var HOST = '127.0.0.1';
 var PORT = 6969;
 var j = 1;
-var number = "15";
 var i = 1;
 
 
@@ -18,6 +17,8 @@ net.createServer(function (sock) {
 
 
     sock.on('data', function (data) {
+
+        var number = "5";  //number 
 
         if (j < 6) {
 
@@ -46,12 +47,15 @@ net.createServer(function (sock) {
 
                         sock.write("BINGO");
                         console.log(number);
-                        var number2 = Math.floor(Math.random() * 21);
-                        var number3 = parseInt(number2);
-                        sock.destroy();
-                        number = number3.toString();
+                        if (number.toString() == "5") {
+
+                            var number2 = Math.floor(Math.random() * 21);
+                            var number3 = parseInt(number2);
+                            number = number3.toString();
+                        }
+                        
                         console.log(number);
-                        // sock.destroy();
+                        sock.destroy();
                     }
                     else {
 
@@ -63,10 +67,10 @@ net.createServer(function (sock) {
                 j = j + 1;
 
             }
-            
+
         }
-        else{
-                     
+        else {
+
             sock.write("END");
 
         }
