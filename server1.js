@@ -4,7 +4,8 @@ var net = require('net');
 var HOST = '127.0.0.1';
 var PORT = 6969;
 var j = 1;
-var number = Math.floor(Math.random() * 21);
+// var number = Math.floor(Math.random() * 21);
+var number = "15";
 var word = "";
 var i = 1;
 
@@ -62,6 +63,12 @@ net.createServer(function (sock) {
                 j = j + 1;
 
             }
+            
+        }
+        else{
+                     
+            sock.write("END");
+
         }
     });
 
