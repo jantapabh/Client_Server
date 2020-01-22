@@ -30,6 +30,7 @@ net.createServer(function (sock) {
                     sock.write("OK");
                     i = 0;
 
+                    
                 } else {
 
                     sock.write("Wrong Username");
