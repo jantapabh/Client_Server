@@ -5,7 +5,6 @@ var HOST = '127.0.0.1';
 var PORT = 6969;
 var j = 1;
 var number = "15";
-var word = "";
 var i = 1;
 
 
@@ -46,9 +45,11 @@ net.createServer(function (sock) {
 
 
                         sock.write("BINGO");
+                        console.log(number);
                         var number2 = Math.floor(Math.random() * 21);
                         var number3 = parseInt(number2);
                         number = number3;
+                        console.log(number);
                         sock.destroy();
                     }
                     else {
