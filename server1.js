@@ -22,6 +22,7 @@ net.createServer(function (sock) {
 
         if (j < 6) {
 
+            number = number3.toString();
 
             if (i == 1) {
 
@@ -47,11 +48,12 @@ net.createServer(function (sock) {
 
                         sock.write("BINGO");
                         console.log(number);
+
                         if (number.toString() == "5") {
 
                             var number2 = Math.floor(Math.random() * 21);
                             var number3 = parseInt(number2);
-                            number = number3.toString();
+                            
                         }
                         
                         console.log(number);
