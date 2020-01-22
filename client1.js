@@ -24,18 +24,16 @@ client.on('data', function (data) {
 
         i = i + 1;
 
-        if (data == "BINGO") {
+        if (data.toString() == "BINGO") {
 
             console.log("Number Correct");
-            console.log(' ', +data);
             client.destroy();
         }
         else {
 
             var answer = Math.floor(Math.random() * 21);
-            // var answer = "15";
             word = parseInt(answer + "");
-            client.write(word + '');
+            client.write(word.toString());
           
             
 
@@ -45,7 +43,7 @@ client.on('data', function (data) {
 });
 
 client.on('error', function (error) {
-    console.log(error);
+    console.log("error");
 });
 
 
